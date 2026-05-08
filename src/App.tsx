@@ -15,6 +15,7 @@ const HomePage = () => {
 
 	return (
 		<>
+      <div className="paddingHeader"></div>
 			<section className="conteudo vertical" id="inicio">
 				<div className="vertical">
 					<div className="bannerInicio horizontal">
