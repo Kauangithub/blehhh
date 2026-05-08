@@ -239,6 +239,28 @@ header{
 #especies{background-image: linear-gradient(rgba(0, 0, 0, 0.6)), url(./assets/img/especies.jpg);}
 #passaros{background-image: linear-gradient(rgba(0, 0, 0, 0.6)), url(./assets/img/passaros.jpeg);}
 
+.menuWeb{
+    background-color: var(--headerBackground);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 20px;
+    height: 100vh;
+    width: 30vh;
+    position: fixed;
+    right: 0;
+    top: 100px;
+}
+.menuLista{
+    gap: 0px !important;  
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    width: 100%;
+    .btn{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
 .leitorQR{
     width: 100%;
     height: 100%;

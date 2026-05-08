@@ -72,7 +72,7 @@ export default function App() {
 				<div className="container">
 					<Routes>
 						<Route path="/" element={<HomePage />} />
-            <Route path="/sobre" element={<Sobre />} />
+            			<Route path="/sobre" element={<Sobre />} />
 						<Route path="/trilhas/" element={<Trilhas />} />
 						<Route path="/trilha/:id" element={<Trilha />} />
 						<Route path='*' element={<NotFound />} />

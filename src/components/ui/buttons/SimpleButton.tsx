@@ -18,7 +18,7 @@ export default function SimpleButton({path, children, tema, icon, type, raio, on
     if(!icon) icon = 'seta';
     tema = (tema && icons[tema]) ? tema : 'default';
     const imagemSrc = icons[tema]?.[icon] || null;
-    tema = tema && styleClass[tema] ? styleClass[tema] : 'btn';// ensuring that the theme will always match the class, and if doesnt exist an specific style, it'll use the default one
+    tema = tema && styleClass[tema] ? 'btn ' + styleClass[tema]: 'btn';// ensuring that the theme will always match the class, and if doesnt exist an specific style, it'll use the default one
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         if(onClick) onClick(event);
         if(path? true : false) window.scrollTo(0, 0);// scroll to top of the page when the button is clicked and has a path to navigate to
