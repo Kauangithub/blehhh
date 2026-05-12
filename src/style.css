@@ -56,7 +56,7 @@ h3 {
 }
 
 section{
-    padding: 0 7.5%;
+    padding: 0 5%;
 }
 .container{
     min-height: 100vh;
@@ -66,13 +66,14 @@ body{
     background-color: var(--verdeEscuro);
     overflow-x: hidden;
     gap: 15px;
+    scroll-behavior: smooth;
 }
 #root{
     overflow-x: hidden;
 }
 
 .paddingHeader{
-    height: 30px;
+    height: 20px;
 }
 
 .bannerInicio{
@@ -112,6 +113,7 @@ body{
     width: 100%;
     min-width: 100%;
     background-size: cover;
+    justify-content: end;
     padding: 20px;
     padding-top: 100px;
     border-radius: 20px;
@@ -156,11 +158,11 @@ body{
 }
 
 .img-fade{
-    background-size: 85%;
+    background-size: 90%;
     background-repeat: no-repeat;
     background-position: center top;
 
-    padding-top: 80%;
+    padding-top: 85%;
 }
 
 #capivara{
@@ -191,15 +193,18 @@ body{
 }
 
 .dropdown-none {
-  color: white;
+  color: #fff;
   border: 0px transparent;
   background: transparent;
   padding: 5px;
+  font-size: 14px;
   transition: 0.4s;
 }
-
+option{
+    color: var(--texto);
+}
 option:checked {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .pontosTrilha{
@@ -280,12 +285,15 @@ option:checked {
         background-color: var(--verdeClaroTransparente);
         backdrop-filter: blur(10px);
         padding: 20px;
-        width: 50%;
+        width: 55%;
         gap: 10px;
 
         .btn{width: 100%;}
         p{color: #000; font-weight: 500;}
         img{width: 24px;}
+        .horizontal{
+            align-items: center;
+        }
     }
     h2{
         color: var(--verdeEscuro);

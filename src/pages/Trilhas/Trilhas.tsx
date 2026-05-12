@@ -22,9 +22,11 @@ export default function Trilhas() {
             <div className="info vertical">
                 <h2>{trilha.nome}</h2>
                 <div className="linhaPontilhadaDark"></div>
-                <div className="horizontal gap5"><img src={Dificuldade}/><p>Leve</p></div>
-                <div className="horizontal gap5"><img src={Distancia}/><p>243m</p></div>
-                <div className="horizontal gap5"><img src={Tempo}/><p>12min</p></div>
+                <div className="vertical gap5">
+                    <div className="horizontal gap5"><img src={Dificuldade}/><p>Leve</p></div>
+                    <div className="horizontal gap5"><img src={Distancia}/><p>243m</p></div>
+                    <div className="horizontal gap5"><img src={Tempo}/><p>12min</p></div>
+                </div>
                 <SimpleButton tema='dark' raio='10' path={`/trilha/${trilha.id}`}>Ver detalhes</SimpleButton>
             </div>
         </div>
@@ -47,14 +49,14 @@ export default function Trilhas() {
                             <p>Exibindo {trilhasList.length} trilhas</p>
                             <div className="horizontal gap5">
                                 <p>Ordenar por: </p>
-                                <Select 
-                                options={Object.keys(order)}
-                                onChange={(newValue) => {
-                                    setOrderKey(newValue as OrderKey);
-                                }}
-                                value={orderKey}
-                                style='none'
-                                ></Select>
+                                <Select
+                                    options={Object.keys(order)}
+                                    onChange={(newValue) => {
+                                        setOrderKey(newValue as OrderKey);
+                                    }}
+                                    value={orderKey}
+                                    style='none'
+                                />
                             </div>
                         </div>
                         {trilhasList}

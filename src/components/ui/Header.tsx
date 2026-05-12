@@ -67,7 +67,7 @@ export default function Header() {
                     </SimpleButton>
 
                     <SimpleButton
-                        tema='dark'
+                        tema='none'
                         icon='Menu'
                         onClick={() => setOpenMenu(!openMenu)}
                     >
