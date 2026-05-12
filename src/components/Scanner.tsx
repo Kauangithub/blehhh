@@ -101,7 +101,7 @@ export default function Scanner({ onClose }: { onClose: () => void }) {
       <div className="QRcontainer vertical" onClick={(e) => e.stopPropagation()}>
         <h1>Aponte a câmera<br></br>para um código QR</h1>
         <div id="reader" />
-        <SimpleButton onClick={() => handleClose()} tema="dark" raio="10">Fechar</SimpleButton>
+        <SimpleButton onClick={() => handleClose()} tema="dark" icon="X" raio="10">Fechar</SimpleButton>
       </div>
     </div>
   );

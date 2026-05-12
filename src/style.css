@@ -251,6 +251,9 @@ header{
     backdrop-filter: blur(5px);
     pointer-events: all;
 }
+body:has(.menuOverlay.open) {
+    overflow: hidden;
+}
 
 .menuWeb{
     background-color: var(--headerBackground);
