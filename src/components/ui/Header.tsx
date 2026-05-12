@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
 import Scanner from '../Scanner';
 import logo from "../../assets/logo.png";
-import { useState } from "react";
+import { useState} from "react";
 import SimpleButton from './buttons/SimpleButton';
 import Menu from './Menu';
 
 export default function Header() {
     const [openScanner, setOpenScanner] = useState(false);
     const [openMenu, setOpenMenu] = useState(false);
-
     return (
         <>
             <header className="horizontal">
                 <Link to="/" className="logo">
-                    <img src={logo} alt="logo do parque"></img>
+                    <img src={logo} alt="logo do parque" />
                 </Link>
                 <nav className="horizontal">
                     <div className="navBtn" id="scanner" onClick={() => setOpenScanner(true)}></div>
@@ -26,7 +25,6 @@ export default function Header() {
                     <SimpleButton path='/' tema='none'  icon='Home' >Início</SimpleButton>
                     <SimpleButton tema='light'          icon='QR'   onClick={() => setOpenScanner(true)}    >Ler QR Code</SimpleButton>
                     <SimpleButton tema='none'           icon='Menu' onClick={() => setOpenMenu(!openMenu)}       >Menu       </SimpleButton>
-
                 </nav>
             </div>
 
@@ -37,4 +35,4 @@ export default function Header() {
             )}
         </>
     );
-};
+}; 

@@ -8,8 +8,8 @@ export default function Trilhas() {
         "Nome A-Z": (a: any, b: any) => a.nome.localeCompare(b.nome),
         "Nome Z-A": (a: any, b: any) => b.nome.localeCompare(a.nome),
     } as const;
-
     type OrderKey = keyof typeof order;
+    
     const [orderKey, setOrderKey] = useState<OrderKey>("Nome A-Z");
     const trilhas = [...data.trilhas].sort(order[orderKey]);
 
