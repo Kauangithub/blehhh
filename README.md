@@ -1,19 +1,15 @@
-![Imagem da tilha](src/assets/img/trilha.webp)
+![Imagem da tilha](readme.png)
 <h1 align="center">
-    <img src="./public/favicon.svg"/>
-    Juqueriquerê
+    <img src="src/assets/logo.png"/>
 </h1>
 
 Repositório dedicado ao site do **Parque Natural Municipal do Juqueriquerê**, desenvolvido na matéria Projeto de Extensão I, lecionada por **Nelson Alves Pinto** no **IFSP Câmpus Caraguatatuba**
 
-
 ## Sobre o site 
-
 
 O site do parque conta com diversas informações úteis para os que desejam visitar o espaço.
 
 Desde pontos interessantes até dificuldades a serem enfrentadas, o sistema busca auxiliar ao máximo a visita ao parque, aprimorando ainda mais a experiência das belezas naturais brasileiras.
-
 
 ## Equipe do projeto
 
@@ -22,4 +18,3 @@ Desde pontos interessantes até dificuldades a serem enfrentadas, o sistema busc
 - Matheus Rodrigues Costa
 - Rafael Ribeiro dos Santos
 - Ygor da Conceição Prado
-
