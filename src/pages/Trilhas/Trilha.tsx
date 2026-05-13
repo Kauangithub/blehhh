@@ -20,7 +20,7 @@ export default function Trilha() {
 
                 <div className="vertical conteudo" id='detalheTrilha'>
                     <div className="mapa">
-                        {<TrilhasMap id={id}></TrilhasMap>}
+                        {<TrilhasMap id={[id]}></TrilhasMap>}
                     </div>
                     <div className="vertical conteudo" id='conteudoTrilha'>
                         <div className='vertical gap5'>

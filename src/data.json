@@ -74,7 +74,7 @@
       ],
       "pontos_no_mapa": [7]
     },
-     {
+    {
       "id": 5,
       "nome": "Trilha da Capivara — Ramal do Píer",
       "cor_identificacao": "Amarelo",
@@ -91,6 +91,21 @@
         { "planta": "Annona", "latitude": "", "longitude": "" },
         { "planta": "Margaritaria nobilis", "latitude": "-23.678591", "longitude": "-45.439180" },
         { "planta": "Pariparoba Mansa", "latitude": "-23.678105", "longitude": "-45.438935" }
+      ],
+      "pontos_no_mapa": [6, 8, 9]
+    },
+    {
+      "id": 6,
+      "nome": "Trilha Acessível",
+      "cor_identificacao": "Azul",
+      "dificuldade": "Leve",
+      "extensao": "Não informada",
+      "duracao": "5 a 7 minutos",
+      "descricao_curta": "Trilha adaptada para acessibilidade, proporcionando contato com a natureza para pessoas com mobilidade reduzida.",
+      "descricao": "Trilha Acessivel",
+      "equipamento_recomendado": "Calçados adequados para trilha, roupas leves, repelente e protetor solar.",
+      "atencao": "Terreno escorregadio em períodos chuvosos, presença de insetos e animais peçonhentos.",
+      "pontos_interesse": [
       ],
       "pontos_no_mapa": [6, 8, 9]
     }
