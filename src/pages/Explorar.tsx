@@ -60,7 +60,7 @@ export default function Explorar() {
 
                             {trilhas.map((trilha) => (
 
-                                <Switch
+                                <button
                                     key={trilha.id}
                                     onClick={() => setTrilhaSelecionada(trilha)}
                                     className={
@@ -70,7 +70,7 @@ export default function Explorar() {
                                     }
                                 >
                                     {trilha.nome}
-                                </Switch>
+                                </button>
 
                             ))}
 
