@@ -108,6 +108,13 @@ body{
     scroll-snap-type: x mandatory;
     scroll-padding: 30px;
     scroll-behavior: smooth;
+
+    img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 20px;
+    }
 }
 .carrosselCard{
     width: 100%;
@@ -337,6 +344,8 @@ option:checked {
         width: 70%;
         justify-content: space-between;
         overflow: hidden;
+
+
     }
     .carrosselCard{
         min-width: none;
