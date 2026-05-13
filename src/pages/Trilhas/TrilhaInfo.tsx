@@ -1,8 +1,10 @@
 import SimpleButton from '../../components/ui/buttons/SimpleButton';
 interface PontoInteresse {
-    planta: string;
-    latitude: string;
-    longitude: string;
+    planta?: string;
+    caminho?: string;
+    misc?: string;
+    latitude?: string;
+    longitude?: string;
 }
 export interface Trilha {
     id: number;

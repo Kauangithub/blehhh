@@ -4,7 +4,6 @@ import data from '../data.json';
 
 import CardTrilha from '../components/CardTrilha.tsx';
 import CardPonto from '../components/CardPonto.tsx';
-import Switch from '../components/ui/buttons/Switch.tsx';
 
 export default function Explorar() {
 

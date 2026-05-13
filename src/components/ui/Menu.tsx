@@ -1,4 +1,5 @@
 import data from '../../data.json';
+import { type Trilha } from '../../pages/Trilhas/TrilhaInfo.tsx';
 import SimpleButton from '../../components/ui/buttons/SimpleButton.tsx';
 import { useState } from 'react';
 import './Menu.css';
@@ -10,8 +11,7 @@ interface menuProps {
 
 export default function Menu({ ativo, onChoice }: menuProps) {
 
-    const trilhas = [...data.trilhas];
-
+    const trilhas: Trilha[] = [...data.trilhas];
     const [trilhasShow, setTrilhasShow] = useState(false);
     const [pontosShow, setPontosShow] = useState(false);
 
@@ -80,7 +80,7 @@ export default function Menu({ ativo, onChoice }: menuProps) {
                                         tema='dark'
                                         raio="0"
                                     >
-                                        {ponto.planta}
+                                        {ponto.planta || ponto.misc || ponto.caminho}
                                     </SimpleButton>
                                 ))
                             )}
