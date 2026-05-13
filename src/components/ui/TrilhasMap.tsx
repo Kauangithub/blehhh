@@ -37,7 +37,7 @@ export default function Map({ id, onHover, onClick, onLeave }: MapProps) {
   const filteredData = useMemo(() => {
     const targetIds = Array.isArray(id) ? id : (id ? [id] : null);
     
-    // 1. Mapeamos as LINHAS (Trilhas) associando-as ao ID do data.json
+    // Mapeamento de trilhas associando-as ao ID do data.json
     const lines = trilhasLinhas.features.map(feature => {
 
       const featName = normalize(feature.properties?.name || "");
@@ -52,21 +52,26 @@ export default function Map({ id, onHover, onClick, onLeave }: MapProps) {
       return targetIds ? targetIds.includes(item.trailId) : true;
     });
 
-    // 2. Mapeamos os PONTOS associando-os ao ID da trilha a que pertencem
+    // Mapeamento de pontos associando-os ao ID da trilha a que pertencem
     const points = trilhasPontos.features.map(feature => {
-
       const featName = normalize(feature.properties?.name || "");
+      
+      // Procura em todas as trilhas qual possui este ponto catalogado
       const trailMetadata = data.trilhas.find(t => 
-        t.pontos_interesse.some(p => normalize(p.planta) === featName)
+        t.pontos_interesse.some(poi => {
+          // Extrai todos os valores das chaves do objeto (ex: "Jerivá", "Bifurcação", etc)
+          const valoresDoPonto = Object.values(poi).map(val => normalize(String(val)));
+          // Verifica se o nome que vem do mapa (PontosRaw) está nesta lista
+          return valoresDoPonto.includes(featName);
+        })
       );
 
       return { feature, trailId: trailMetadata?.id };
-
     }).filter(item => {
-
+      // Só exibe se o ponto existir no data.json (tiver trailId)
+      // E, se houver um filtro de ID ativo, o ponto deve pertencer a essa trilha
       if (!item.trailId) return false;
       return targetIds ? targetIds.includes(item.trailId) : true;
-
     });
 
     return { lines, points };

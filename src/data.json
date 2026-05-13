@@ -54,7 +54,8 @@
         { "planta": "Ingá", "latitude": "", "longitude": "" },
         { "planta": "Annona", "latitude": "", "longitude": "" },
         { "planta": "Margaritaria nobilis", "latitude": "-23.678591", "longitude": "-45.439180" },
-        { "planta": "Pariparoba Mansa", "latitude": "-23.678105", "longitude": "-45.438935" }
+        { "planta": "Pariparoba Mansa", "latitude": "-23.678105", "longitude": "-45.438935" },
+        { "Caminho" : "Bifurcação"}
       ],
       "pontos_no_mapa": [6, 8, 9]
     },
@@ -70,7 +71,8 @@
       "equipamento_recomendado": "Calçados antiderrapantes, roupas leves, repelente e protetor solar.",
       "atencao": "Áreas escorregadias, possibilidade de alagamento em períodos chuvosos e presença de insetos e animais peçonhentos.",
       "pontos_interesse": [
-        { "planta": "Margaridão (Girassol-mexicano)", "latitude": "-23.678680", "longitude": "-45.440177" }
+        { "planta": "Margaridão (Girassol-mexicano)", "latitude": "-23.678680", "longitude": "-45.440177" },
+        { "Caminho" : "Bifurcação"}
       ],
       "pontos_no_mapa": [7]
     },
@@ -90,7 +92,8 @@
         { "planta": "Ingá", "latitude": "", "longitude": "" },
         { "planta": "Annona", "latitude": "", "longitude": "" },
         { "planta": "Margaritaria nobilis", "latitude": "-23.678591", "longitude": "-45.439180" },
-        { "planta": "Pariparoba Mansa", "latitude": "-23.678105", "longitude": "-45.438935" }
+        { "planta": "Pariparoba Mansa", "latitude": "-23.678105", "longitude": "-45.438935" },
+        { "Caminho" : "Bifurcação"}
       ],
       "pontos_no_mapa": [6, 8, 9]
     },
@@ -106,6 +109,7 @@
       "equipamento_recomendado": "Calçados adequados para trilha, roupas leves, repelente e protetor solar.",
       "atencao": "Terreno escorregadio em períodos chuvosos, presença de insetos e animais peçonhentos.",
       "pontos_interesse": [
+        { "misc" : "Observatório", "latitude": "-23.67783", "longitude": "-45.439445"}
       ],
       "pontos_no_mapa": [6, 8, 9]
     }
