@@ -5,6 +5,7 @@ import CardTrilha from '../components/ui/CardTrilha.tsx';
 import CardPonto from '../components/ui/CardPonto.tsx';
 import TrilhasMap from '../components/ui/TrilhasMap.tsx';
 import DraggableCarousel from '../components/ui/DraggableCarousel.tsx';
+import './styles/explorar.css';
 
 export default function Explorar() {
     const trilhas = data.trilhas;

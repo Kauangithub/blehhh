@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import SimpleButton from '../components/ui/buttons/SimpleButton';
 import TrilhasMap from '../components/ui/TrilhasMap';
-import '../assets/styles/mapa.css';
+import './styles/mapa.css';
 import data from '../data.json';
 import { type Trilha } from './Trilhas/TrilhaInfo';
 
