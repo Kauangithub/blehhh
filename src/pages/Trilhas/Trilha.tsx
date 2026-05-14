@@ -5,7 +5,7 @@ import TrilhaInfo, { type Trilha } from './TrilhaInfo';
 import SimpleButton from '../../components/ui/buttons/SimpleButton';
 import TrilhasMap from '../../components/ui/TrilhasMap';
 import DraggableCarousel from '../../components/ui/DraggableCarousel.tsx';
-import { icons } from '../../components/ui/icons.tsx';
+import { icons } from '../../components/ui/icons';
 import CardPonto from '../../components/ui/CardPonto';
 
 export default function Trilha() {
@@ -32,17 +32,13 @@ export default function Trilha() {
             <section className='vertical conteudo'>
                 <SimpleButton path="/explorar/" type='back'>Voltar para Mapa</SimpleButton>
 
-                <div className="vertical conteudo" id='detalheTrilha'>
                     <div className="mapa">
                         {<TrilhasMap id={[id]}></TrilhasMap>}
                     </div>
-                    <div className="vertical conteudo" id='conteudoTrilha'>
-                        <div className='vertical gap5'>
-                            <div className='horizontal titulo'>
-                                <h1>{trilha.nome}</h1>
-                            </div>
-                            <p>{trilha.descricao_curta}</p>
 
+                        <div className='vertical gap5'>
+                            <h1>{trilha.nome}</h1>
+                            <p>{trilha.descricao_curta}</p>
                         </div>
 
                         <div className="horizontal destaquesTrilha">
@@ -70,17 +66,14 @@ export default function Trilha() {
                                 <p>{trilha.dificuldade}</p>
                             </div>
                         </div>
-                        <DraggableCarousel 
-                        items={pontosList}
-                        />
-
                         <div className="vertical gap5">
+                            <h1>Descrição</h1>
                             <p>{trilha.descricao}</p>
-
-                            <TrilhaInfo trilha={trilha} />
                         </div>
-                    </div>
-                </div>
+                        <div className="vertical gap5">
+                            <h1>Pontos de Interesse</h1>
+                            <DraggableCarousel items={pontosList}/>
+                        </div>
             </section>
         </>
     )

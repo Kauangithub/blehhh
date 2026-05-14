@@ -3,16 +3,11 @@ import data from '../../data.json';
 import Select from '../../components/ui/form/Select.tsx';
 import CardTrilha from '../../components/ui/CardTrilha.tsx';
 
-
-
-
-
 export default function Trilhas() {
     const order = {
         "Nome A-Z": (a: any, b: any) => a.nome.localeCompare(b.nome),
         "Nome Z-A": (a: any, b: any) => b.nome.localeCompare(a.nome),
     } as const;
-
 
     type OrderKey = keyof typeof order;
     
