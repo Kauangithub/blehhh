@@ -133,10 +133,8 @@ function AnimatedRoutes() {
 	return (
 		<>
 			<Header />
-
 			<div className="container">
 				<ScrollToTop />
-
 				<AnimatePresence mode="wait">
 					<Routes
 						location={location}
@@ -146,7 +144,6 @@ function AnimatedRoutes() {
 							path="/"
 							element={<HomePage />}
 						/>
-
 						<Route
 							path="/sobre"
 							element={
@@ -155,7 +152,6 @@ function AnimatedRoutes() {
 								</PageTransition>
 							}
 						/>
-
 						<Route
 							path="/mapa"
 							element={
@@ -164,7 +160,6 @@ function AnimatedRoutes() {
 								</PageTransition>
 							}
 						/>
-
 						<Route
 							path="/trilhas/"
 							element={
@@ -173,7 +168,6 @@ function AnimatedRoutes() {
 								</PageTransition>
 							}
 						/>
-
 						<Route
 							path="/trilha/:id"
 							element={
@@ -182,7 +176,6 @@ function AnimatedRoutes() {
 								</PageTransition>
 							}
 						/>
-
 						<Route
 							path="/explorar"
 							element={
@@ -191,7 +184,6 @@ function AnimatedRoutes() {
 								</PageTransition>
 							}
 						/>
-
 						<Route
 							path="*"
 							element={
@@ -203,7 +195,6 @@ function AnimatedRoutes() {
 					</Routes>
 				</AnimatePresence>
 			</div>
-
 			<Footer />
 		</>
 	);

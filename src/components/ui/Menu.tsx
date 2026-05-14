@@ -17,9 +17,9 @@ export default function Menu({ ativo, onChoice }: menuProps) {
     const [trilhasShow, setTrilhasShow] = useState(false);
     const [pontosShow, setPontosShow] = useState(false);
 
-    const buttonMenuDark = (path?: string, title?: string, icon?: string) => {
+    const buttonMenu = (path?: string, title?: string, icon?: string, dark?: boolean) => {
         return (
-            <div className='MenuGroup dark'>
+            <div className={`MenuGroup ${dark ? 'dark' : ''}`}>
                 <SimpleButton
                     tema='dark'
                     icon="none"
@@ -48,9 +48,9 @@ export default function Menu({ ativo, onChoice }: menuProps) {
                     <h1>Menu</h1>
 
                     {/*fazer renderização condicional dps, apenas para web*/}
-                    {buttonMenuDark("", "Início", Home)}
-                    {buttonMenuDark("sobre", "Sobre", Sobre)}
-                    {buttonMenuDark("explorar", "Mapa", Explorar)}
+                    {buttonMenu("", "Início", Home, true)}
+                    {buttonMenu("sobre", "Sobre", Sobre, true)}
+                    {buttonMenu("explorar", "Mapa", Explorar, true)}
                     
                     {/* TRILHAS */}
                     <div className='MenuGroup'>
@@ -77,7 +77,12 @@ export default function Menu({ ativo, onChoice }: menuProps) {
                                     {trilha.nome}
                                 </SimpleButton>
                             ))}
-
+                            <SimpleButton
+                                raio="0"
+                                path='/explorar'
+                            >
+                                <h3>Ver todas as trilhas</h3>
+                            </SimpleButton>
                         </div>
                     </div>
 
@@ -106,6 +111,7 @@ export default function Menu({ ativo, onChoice }: menuProps) {
                                     </SimpleButton>
                                 ))
                             )}
+                            
 
                         </div>
                     </div>
