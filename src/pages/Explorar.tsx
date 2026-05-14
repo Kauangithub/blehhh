@@ -1,19 +1,16 @@
 import { useState } from 'react';
 import data from '../data.json';
 
-import CardTrilha from '../components/CardTrilha.tsx';
-import CardPonto from '../components/CardPonto.tsx';
+import CardTrilha from '../components/ui/CardTrilha.tsx';
+import CardPonto from '../components/ui/CardPonto.tsx';
 import TrilhasMap from '../components/ui/TrilhasMap.tsx';
 import DraggableCarousel from '../components/ui/DraggableCarousel.tsx';
 
 export default function Explorar() {
     const trilhas = data.trilhas;
     
-    // 1. Inicialize com o ID da primeira trilha (ID 1), não com 0
     const [trilhaSelecionada, setTrilhaSelecionada] = useState(trilhas[0].id);
 
-    // 2. BUSCA SEGURA: Encontre o objeto da trilha pelo ID
-    // Isso evita o erro de 'undefined' ao usar o ID como index
     const trilhaAtual = trilhas.find(t => t.id === trilhaSelecionada) || trilhas[0];
 
     const trilhasList = trilhas.map((trilha) => (
@@ -23,8 +20,6 @@ export default function Explorar() {
             trilha={trilha}
         />
     ));
-
-    // 3. Use 'trilhaAtual' para mapear os pontos
     const pontosList = trilhaAtual.pontos_interesse.map((ponto, index) => (
         <CardPonto
             key={index}
