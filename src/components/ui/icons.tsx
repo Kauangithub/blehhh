@@ -11,6 +11,9 @@ import Sobre        from '../../assets/icons/Sobre.png';
 import Dificuldade  from '../../assets/icons/Dificuldade-light.png';
 import Distancia    from '../../assets/icons/Distancia-light.png';
 import Tempo        from '../../assets/icons/Tempo-light.png';
+import DificuldadeDark  from '../../assets/icons/Dificuldade.png';
+import DistanciaDark    from '../../assets/icons/Distancia.png';
+import TempoDark        from '../../assets/icons/Tempo.png';
 
 export const icons = {
         "default": {
@@ -32,7 +35,10 @@ export const icons = {
             "Menu"          : menu,
             "X"             : XDark,
             "Explorar"      : Explorar,
-            "Sobre"         : Sobre
+            "Sobre"         : Sobre,
+            "Dificuldade"   : DificuldadeDark,
+            "Distancia"     : DistanciaDark,
+            "Tempo"         : TempoDark
         },
          "none": {
             "seta"          : setaDark,
