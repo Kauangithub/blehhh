@@ -4,16 +4,27 @@ import NotFound from '../NotFound';
 import TrilhaInfo, { type Trilha } from './TrilhaInfo';
 import SimpleButton from '../../components/ui/buttons/SimpleButton';
 import TrilhasMap from '../../components/ui/TrilhasMap';
-import distancia from '../../assets/icons/Distancia-light.png';
-import dificuldade from '../../assets/icons/Dificuldade-light.png';
-import tempo from '../../assets/icons/Tempo-light.png';
+import DraggableCarousel from '../../components/ui/DraggableCarousel.tsx';
+import { icons } from '../../components/ui/icons';
+import CardPonto from '../../components/ui/CardPonto';
 
 export default function Trilha() {
+    const { distancia, tempo, dificuldade } = icons.default;
     let params = useParams();
     let id = parseInt(params.id || ``);
 
+
     const trilha = data.trilhas.find(t => t.id === id) as Trilha;
     if (!trilha) return <NotFound />;
+
+    const pontosList = trilha.pontos_interesse.map((ponto, index) => (
+        <CardPonto
+            key={index}
+            ponto={ponto}
+            trilha={trilha.nome}
+        />
+    ));
+
 
     return (
         <>
@@ -59,7 +70,9 @@ export default function Trilha() {
                                 <p>{trilha.dificuldade}</p>
                             </div>
                         </div>
-
+                        <DraggableCarousel 
+                        items={pontosList}
+                        />
 
                         <div className="vertical gap5">
                             <p>{trilha.descricao}</p>
