@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import data from '../../data.json';
 import Select from '../../components/ui/form/Select.tsx';
-import CardTrilha from '../../components/CardTrilha.tsx';
+import CardTrilha from '../../components/ui/CardTrilha.tsx';
 
 
 

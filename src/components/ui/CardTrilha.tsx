@@ -1,17 +1,19 @@
-import { type Trilha } from '../pages/Trilhas/TrilhaInfo';
+import { type Trilha } from '../../pages/Trilhas/TrilhaInfo';
 import { Link } from "react-router-dom";
-import Dificuldade from '../assets/icons/Dificuldade.png';
-import Distancia from '../assets/icons/Distância.png';
-import Tempo from '../assets/icons/Tempo.png';
+import { icons } from './icons';
 import './CardTrilha.css'
+import type { JSX } from 'react';
 
 type Props = {
     trilha: Trilha;
+    id?: string | number;
 };
 
-export default function CardTrilha({ trilha }: Props) {
+export default function CardTrilha({ trilha, id }: Props): JSX.Element {
+    const { Dificuldade, Distancia, Tempo } = icons.default;
+
     return (
-        <Link to={`/trilha/${trilha.id}`} className='cardTrilha carrosselCard'>
+        <Link to={`/trilha/${id}`} className='cardTrilha carrosselCard'>
             <div className="info vertical">
 
                 <h2>{trilha.nome}</h2>

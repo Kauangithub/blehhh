@@ -14,10 +14,11 @@ interface MapProps {
   onHover?: (event: React.MouseEvent<SVGElement>, id: number) => void;
   onClick?: (id: number) => void;
   onLeave?: () => void;
+  highlight?: number | number[]; // IDs das trilhas a destacar
 }
 
-export default function Map({ id, onHover, onClick, onLeave }: MapProps) {
-  
+export default function Map({ id, onHover, onClick, onLeave, highlight }: MapProps) {
+
   // Função auxiliar para normalizar nomes e facilitar a busca entre JSONs
   const normalize = (s: string) => s.toLowerCase().replace('trilha ', '').replace('.', '').trim();
 
@@ -52,7 +53,6 @@ export default function Map({ id, onHover, onClick, onLeave }: MapProps) {
       return targetIds ? targetIds.includes(item.trailId) : true;
     });
 
-    // Mapeamento de pontos associando-os ao ID da trilha a que pertencem
     const points = trilhasPontos.features.map(feature => {
       const featName = normalize(feature.properties?.name || "");
       
@@ -82,24 +82,37 @@ export default function Map({ id, onHover, onClick, onLeave }: MapProps) {
       <image href={mapImage} width="1146" height="1146" />
 
       {/* Camada de Trilhas */}
-      <g className="trails-layer">
-        {filteredData.lines.map((item, idx) => (
-          <path
-            key={`line-${idx}`}
-            d={pathGenerator(item.feature) || ""}
-            stroke={item.feature.properties?.stroke || "#4CAF50"}
-            strokeWidth="10"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity="0.8"
-            style={{ cursor: 'pointer', transition: '0.3s' }}
-            // Agora passamos o item.trailId (o ID real do data.json)
-            onMouseEnter={(e) => item.trailId && onHover?.(e, item.trailId)}
-            onMouseLeave={onLeave}
-            onClick={() => item.trailId && onClick?.(item.trailId)}
+      {filteredData.lines.map((item, idx) => {
+  const d = pathGenerator(item.feature) || "";
+  
+  return (
+    <g key={`trail-group-${idx}`}>
+      {/* 1. PATH FANTASMA (Área de clique expandida) */}
+      <path
+        d={d}
+        stroke="transparent"
+        strokeWidth="45"
+        fill="none"
+        style={{ cursor: 'pointer' }}
+        onMouseEnter={(e) => item.trailId && onHover?.(e, item.trailId)}
+        onMouseLeave={onLeave}
+        onClick={() => item.trailId && onClick?.(item.trailId)}
+      />
+
+      {/* 2. PATH VISUAL (O que o usuário vê) */}
+      <path
+        d={d}
+        stroke={item.feature.properties?.stroke || "#4CAF50"}
+        strokeWidth="10" // Espessura visual fina
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.8"
+        pointerEvents="none"
+        className={!highlight || (item.trailId && (Array.isArray(highlight) ? highlight.includes(item.trailId) : highlight === item.trailId)) ? 'path highlighted' : 'path not-highlighted'}
           />
-        ))}
-      </g>
+    </g>
+      );
+    })}
 
       {/* Camada de Pontos */}
       <g className="points-layer">
