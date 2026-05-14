@@ -46,8 +46,7 @@ export default function Explorar() {
                 <div className="vertical gap5">
                     <h1>Trilhas</h1>
                     <DraggableCarousel 
-                        items={trilhasList} 
-                        cardWidth={400} 
+                        items={trilhasList}
                         activeId={trilhaSelecionada}
                         // O 'id' vem do componente CardTrilha.props.id
                         onChange={(id) => setTrilhaSelecionada(Number(id))}
